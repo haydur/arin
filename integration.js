@@ -46,7 +46,7 @@ function doLookup(entities, options, cb) {
 function _lookupEntity(entityObj, options, cb) {
     log.debug({entity: entityObj.value}, "What is the entity");
 	
-    if (entityObj.value)
+    if (entityObj.value) {
 		
 		if (entityObj.types.indexOf('custom.IPv4CIDR') > 0) {
 			const arinuri = 'cidr';
@@ -143,6 +143,8 @@ function _lookupEntity(entityObj, options, cb) {
                 }
             });
         });
+		
+	}
 }
 
 function validateOptions(userOptions, cb) {
