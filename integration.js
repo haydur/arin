@@ -109,14 +109,14 @@ function _lookupEntity(entityObj, options, cb) {
                     // Required: this is the string value that is displayed in the template
                     entity_name: entityObj.value,
                     // Required: These are the tags that are displayed in your template
-                    summary: [body.net.orgRef.@handle],
+                    summary: [body.net.orgRef.handle],
                     // Data that you want to pass back to the notification window details block
                     details: {
-                        created: body.net.orgRef.@name,
-                        updated: body.net.parentNetRef.@handle,
-                        registrar: body.net.startAddress.$,
-                        registrant: body.net.updateDate.$,
-                        ip: body.net.netBlocks.netBlock.cidrLength.$,
+                        created: body.net.orgRef.name,
+                        updated: body.net.parentNetRef.handle,
+                        registrar: body.net.startAddress,
+                        registrant: body.net.updateDate,
+                        ip: body.net.netBlocks.netBlock.cidrLength,
                         domains: body.response.server.other_domains,
                         expires: body.response.registration.expires,
                         nameservers: nameservers.server,
