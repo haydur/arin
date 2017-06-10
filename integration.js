@@ -23,7 +23,7 @@ function doLookup(entities, options, cb) {
         if (_.includes(blacklist, entityObj.value)) {
             next(null);
         }
-        else if (entityObj.isIPv4 || (entityObj.isIPv6 && checkv6 == true) || entity.types.indexOf('custom.IPv4CIDR') > 0) {
+        else if (entityObj.isIPv4 || (entityObj.isIPv6 && checkv6 == true) || entityObj.types.indexOf('custom.IPv4CIDR') > 0) {
             _lookupEntity(entityObj, options, function (err, result) {
                 if (err) {
                     next(err);
@@ -48,7 +48,7 @@ function _lookupEntity(entityObj, options, cb) {
 	
     if (entityObj.value)
 		
-		if (entity.types.indexOf('custom.IPv4CIDR') > 0) {
+		if (entityObj.types.indexOf('custom.IPv4CIDR') > 0) {
 			arinuri = 'cidr';
 		} else {
 			arinuri = 'ip';
