@@ -49,9 +49,9 @@ function _lookupEntity(entityObj, options, cb) {
     if (entityObj.value)
 		
 		if (entityObj.types.indexOf('custom.IPv4CIDR') > 0) {
-			let arinuri = 'cidr';
+			const arinuri = 'cidr';
 		} else {
-			let arinuri = 'ip';
+			const arinuri = 'ip';
 		}
 	
         request({
