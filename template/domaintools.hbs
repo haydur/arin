@@ -1,0 +1,193 @@
+<div class="registrant">
+    <i class="fa fa-registered"></i> <span class ="Registrant Information"> Registration Information</span>
+    {{#if block.isCached}}
+    <i>(Entity is Cached)</i>
+    {{/if}}
+</div>
+
+    <div class="registrants">
+    {{#if block.data.details.registrant}}
+        <span class="name1"> Registrant: </span>
+        {{block.data.details.registrant}}
+    {{/if}}
+    </div>
+
+    <div class="numDomains">
+    {{#if block.data.details.domains}}
+        <span class="name2"> Number of Associated Domains: </span>
+        {{block.data.details.domains}}
+    {{/if}}
+    </div>
+
+    <div class="regExpires">
+    {{#if block.data.details.expires}}
+        <span class="name3"> Expiration Date: </span>
+        {{moment-time block.data.details.expires}}
+    {{/if}}
+    </div>
+
+    <div class="regcreated">
+    {{#if block.data.details.created}}
+        <span class="name4"> Created Date: </span>
+        {{moment-time block.data.details.created}}
+    {{/if}}
+    </div>
+
+
+    <div class="regupdated">
+    {{#if block.data.details.updated}}
+        <span class="name5"> Updated Date: </span>
+        {{moment-time block.data.details.updated}}
+    {{/if}}
+    </div>
+
+    <div class="registrar">
+    {{#if block.data.details.registrar}}
+        <span class="name6"> Registrar: </span>
+        {{block.data.details.registrar}}
+    {{/if}}
+    </div>
+
+
+    <div class="statuses">
+    {{#if block.data.details.status}}
+        <p>
+            <span class="status">  Status: </span>
+        </p>
+        <ul>
+            {{#each block.data.details.status as |item|}}
+            <li>{{item}}</li>
+            {{/each}}
+        </ul>
+    {{/if}}
+    </div>
+
+    <div class ="reverseipsection">
+        <a href="{{block.data.details.reverse_ip_url}}">View Additional Registration Information</a><i class="btb bt-external-link"></i>
+    </div>
+
+
+<div class="website">
+<i class="fa fa-info"></i> <span class="websiteInfo"> Website Information</span>
+</div>
+
+    <div class="title">
+    {{#if block.data.details.title}}
+        {{block.data.details.title}}
+    <span class="titles">: </span>
+        {{block.data.details.meta}}
+    {{/if}}
+    </div>
+
+    <div class="seo">
+    {{#if block.data.details.seoScore}}
+        <span class="seo1"> SEO Score: </span>
+        {{block.data.details.seoScore}}
+    {{/if}}
+    </div>
+
+    <div class="server">
+    {{#if block.data.details.server}}
+        <span class="server_type"> Server Type: </span>
+        {{block.data.details.title}}
+    {{/if}}
+    </div>
+
+    <div class="response">
+    {{#if block.data.details.response}}
+        <span class="responsetype"> Response Type: </span>
+        {{block.data.details.response}}
+    {{/if}}
+    </div>
+
+    <div class ="websiteWhoIssection">
+        <a href="{{block.data.details.website_whois}}">View Additional Website Information </a><i class="btb bt-external-link"></i>
+    </div>
+
+
+    <div class="nameserverss">
+    {{#if block.data.details.nameservers}}
+
+        <p>
+            <i class="fa fa-server"></i><span class="Adatas"> Name Servers</span>
+        </p>
+        <ul>
+            {{#each block.data.details.nameservers as |item|}}
+            <li>{{item}}</li>
+            {{/each}}
+        </ul>
+    {{/if}}
+    </div>
+
+<div class="whois">
+<i class="fa fa-user"></i><span class="whoisInfo"> WhoIs Information</span>
+</div>
+
+    <div class="earliest">
+    {{#if block.data.details.earliest}}
+        <span class="early"> Earliest Event: </span>
+        {{moment-time block.data.details.earliest}}
+    {{/if}}
+    </div>
+
+    <div class="records">
+    {{#if block.data.details.records}}
+        <span class="records"> Number of WhoIs Records: </span>
+        {{block.data.details.records}}
+    {{/if}}
+    </div>
+
+    <div class ="reversewhoissection">
+        <a href="{{block.data.details.reverse_whois_url}}">View Additional WhoIs Information </a><i class="btb bt-external-link"></i>
+    </div>
+
+
+<div class="history">
+<i class="fa fa-globe"></i><span class="histories"> Domain History </span>
+</div>
+
+    <div class="earliestEvent">
+    {{#if block.data.details.earliest}}
+        <span class="Earliest"> Earliest Event: </span>
+        {{moment-time block.data.details.earliest}}
+    {{/if}}
+    </div>
+
+    <div class="historicalevents">
+    {{#if block.data.details.historicalEvents}}
+        <span class="events"> Number of Historical Events: </span>
+        {{block.data.details.historicalEvents}}
+    {{/if}}
+    </div>
+
+    <div class="nameEvents">
+    {{#if block.data.details.nameEvents}}
+        <span class="nevents"> Number of Name_Server Events: </span>
+        {{block.data.details.nameEvents}}
+    {{/if}}
+    </div>
+
+    <div class="nameSpan">
+    {{#if block.data.details.nameSpan}}
+        <span class="nspan"> Name_Server Timespan: </span>
+        {{block.data.details.nameSpan}}
+    {{/if}}
+    </div>
+
+    <div class="ipEvents">
+    {{#if block.data.details.ipEvents}}
+        <span class="ievents"> Number of IP Events: </span>
+        {{block.data.details.ipEvents}}
+    {{/if}}
+    </div>
+
+    <div class="IPSpan">
+    {{#if block.data.details.ipSpan}}
+        <span class="ispan"> IP Timespan: </span>
+        {{block.data.details.ipSpan}}
+    {{/if}}
+    </div>
+
+    <div class ="historyurlsection">
+        <a href="{{block.data.details.history_url}}">View Additional Historical Information </a><i class="btb bt-external-link"></i>
+    </div>
