@@ -5,7 +5,7 @@ let _ = require('lodash');
 let util = require('util');
 let async = require('async');
 let log = null;
-
+var arinuri = '';
 
 function startup(logger) {
     log = logger;
