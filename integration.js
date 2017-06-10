@@ -53,6 +53,8 @@ function _lookupEntity(entityObj, options, cb) {
 		} else {
 			const arinuri = 'ip';
 		}
+		
+		log.debug({arniuri: arinuri}, "What is the ARIN API endpoint");
 	
         request({
             uri: 'http://whois.arin.net/rest/' + arinuri + '/' + entityObj.value,
