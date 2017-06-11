@@ -118,27 +118,7 @@ function _lookupEntity(entityObj, options, cb) {
                         updated: body.net.parentNetRef.handle,
                         registrar: body.net.startAddress,
                         registrant: body.net.updateDate,
-                        ip: body.net.netBlocks.netBlock.cidrLength,
-                        domains: body.response.server.other_domains,
-                        expires: body.response.registration.expires,
-                        nameservers: nameservers.server,
-                        earliest: body.response.history.registrar.earliest_event,
-                        historicalEvents: body.response.history.registrar.events,
-                        nameEvents: body.response.history.name_server.events,
-                        nameSpan: body.response.history.name_server.timespan_in_years,
-                        ipEvents: body.response.history.ip_address.events,
-                        ipSpan: body.response.history.ip_address.timespan_in_years,
-                        records: body.response.history.whois.records,
-                        whoearliest: body.response.history.whois.earliest_event,
-                        seoScore: body.response.seo.score,
-                        response: body.response.website_data.response_code,
-                        title: body.response.website_data.title,
-                        server: body.response.website_data.server,
-                        meta: body.response.website_data.meta.description,
-                        history_url: body.response.history.registrar.product_url,
-                        reverse_whois_url: body.response.registrant.product_url,
-                        reverse_ip_url: body.response.server.product_url,
-                        website_whois: body.response.website_data.product_url
+                        ip: body.net.netBlocks.netBlock.cidrLength
                     }
                 }
             });
