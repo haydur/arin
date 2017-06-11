@@ -49,9 +49,9 @@ function _lookupEntity(entityObj, options, cb) {
     if (entityObj.value) {
 		
 		if (entityObj.types.indexOf('custom.IPv4CIDR') > 0) {
-			let arinuri = 'cidr';
+			arinuri = 'cidr';
 		} else {
-			let arinuri = 'ip';
+			arinuri = 'ip';
 		}
 		
 		log.debug({arinuri: arinuri}, "What is the ARIN API endpoint");
