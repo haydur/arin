@@ -23,7 +23,7 @@ function doLookup(entities, options, cb) {
         if (_.includes(blacklist, entityObj.value)) {
             next(null);
         }
-        else if (entityObj.isIPv4 || (entityObj.isIPv6 && checkv6 == true) || entityObj.types.indexOf('custom.IPv4CIDR') > 0) {
+        else if ((entityObj.isIPv4 && !entityObj.isPrivateIP) || (entityObj.isIPv6 && checkv6 == true) || entityObj.types.indexOf('custom.IPv4CIDR') > 0) {
             _lookupEntity(entityObj, options, function (err, result) {
                 if (err) {
                     next(err);
@@ -111,10 +111,10 @@ function _lookupEntity(entityObj, options, cb) {
                     // Required: this is the string value that is displayed in the template
                     entity_name: entityObj.value,
                     // Required: These are the tags that are displayed in your template
-                    summary: [body.net.orgRef.handle],
+                    summary: [body.net.orgRef['@handle']],
                     // Data that you want to pass back to the notification window details block
                     details: {
-                        created: body.net.orgRef.name,
+                        created: body.net.orgRef['@name'],
                         updated: body.net.parentNetRef.handle,
                         registrar: body.net.startAddress,
                         registrant: body.net.updateDate,

@@ -1,5 +1,5 @@
 <div class="registrant">
-    <i class="fa fa-registered"></i> <span class ="Registrant Information"> Registration Information</span>
+    <span class ="Registrant Information">Organization Information</span>
     {{#if block.isCached}}
     <i>(Entity is Cached)</i>
     {{/if}}
@@ -7,14 +7,14 @@
 
     <div class="registrants">
     {{#if block.data.details.registrant}}
-        <span class="name1"> Registrant: </span>
+        <span class="name1"> Organization Handle: </span>
         {{block.data.details.registrant}}
     {{/if}}
     </div>
 
     <div class="numDomains">
     {{#if block.data.details.domains}}
-        <span class="name2"> Number of Associated Domains: </span>
+        <span class="name2"> Organization Name: </span>
         {{block.data.details.domains}}
     {{/if}}
     </div>
