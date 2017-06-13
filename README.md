@@ -2,9 +2,6 @@
 
 The Polarity AIN integration allows Polarity to search the American Registry of Internet Numbers database to return information about IP addresses.
 
-![image](https://cloud.githubusercontent.com/assets/22529325/24931987/74d6abec-1edd-11e7-8a66-89a52a71b71d.png)
-
-
 ## Domain Tools Integration Options
 
 ### Lookup IPv6 Addresses
