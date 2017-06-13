@@ -3,24 +3,24 @@
 {{/if}}
 	
 <div class="arinfosect">
-<i class="fa fa-address-book-o"></i> <span>Organization Information</span>
+<i class="fa fa-user"></i> <span>Organization Information</span>
 </div>
 
     <div class="arinfo">
-    {{#if block.data.details.registrant}}
+    {{#if block.data.details.orgHandle}}
         <span class="arinfolabel"> Organization Handle: </span>
         {{block.data.details.orgHandle}}
     {{/if}}
     </div>
 
     <div class="arinfo">
-    {{#if block.data.details.domains}}
+    {{#if block.data.details.orgName}}
         <span class="arinfolabel"> Organization Name: </span>
         {{block.data.details.orgName}}
     {{/if}}
     </div>
 
-    <div class ="arinfo">
+    <div class ="arlink">
         <a href="{{block.data.details.orgRef}}">View Additional Organization Information</a><i class="btb bt-external-link"></i>
     </div>
 
@@ -78,7 +78,7 @@
     {{/if}}
     </div>
 
-    <div class ="arinlink">
+    <div class ="arlink">
         <a href="{{block.data.details.netBlockRef}}">View Additional Network Information</a><i class="btb bt-external-link"></i>
     </div>
 
@@ -100,6 +100,6 @@
     {{/if}}
     </div>
 
-    <div class ="reversewhoissection">
+    <div class ="arlink">
         <a href="{{block.data.details.parentRef}}">View Additional Parent Network Details</a><i class="btb bt-external-link"></i>
     </div>
