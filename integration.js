@@ -54,6 +54,7 @@ function _lookupEntity(entityObj, options, cb) {
 			arinuri = 'ip';
 		}
 		
+		//Debug check for API endpoint URI  assignment
 		log.debug({arinuri: arinuri}, "What is the ARIN API endpoint");
 	
         request({
@@ -114,11 +115,23 @@ function _lookupEntity(entityObj, options, cb) {
                     summary: [body.net.orgRef['@handle']],
                     // Data that you want to pass back to the notification window details block
                     details: {
-                        created: body.net.orgRef['@name'],
-                        updated: body.net.parentNetRef.handle,
-                        registrar: body.net.startAddress,
-                        registrant: body.net.updateDate,
-                        ip: body.net.netBlocks.netBlock.cidrLength
+						//Organization
+                        orgHandle: body.net.orgRef['@handle'],
+						orgName: body.net.orgRef['@name'],
+						orgRef: body.net.orgRef['$'],
+						//Network Details
+						netBlockHandle: body.net.handle['$'],
+						netBlockName: body.net.name['$'],
+						netBlockCIDR: body.net.startAddress['$'] +  '/' + body.net.netBlocks.netBlock.cidrLength['$'],
+                        startAddr: body.net.startAddress['$'],
+						endAddr: body.net.endAddress['$'],
+						netBlockRef: body.net.ref['$'],
+						regDate: body.net.registrationDate['$'],
+                        upDate: body.net.updateDate['$'],
+						//Parent Network
+                        parentHandle: body.net.parentNetRef['@handle'],
+						parentName: body.net.parentNetRef['@name'],
+						parentRef: body.net.parentNetRef['$']
                     }
                 }
             });

@@ -1,193 +1,105 @@
-<div class="registrant">
-    <span class ="Registrant Information">Organization Information</span>
-    {{#if block.isCached}}
-    <i>(Entity is Cached)</i>
-    {{/if}}
+{{#if block.isCached}}
+<i>(Entity is Cached)</i>
+{{/if}}
+	
+<div class="arinfosect">
+<i class="fa fa-address-book-o"></i> <span>Organization Information</span>
 </div>
 
-    <div class="registrants">
+    <div class="arinfo">
     {{#if block.data.details.registrant}}
-        <span class="name1"> Organization Handle: </span>
-        {{block.data.details.registrant}}
+        <span class="arinfolabel"> Organization Handle: </span>
+        {{block.data.details.orgHandle}}
     {{/if}}
     </div>
 
-    <div class="numDomains">
+    <div class="arinfo">
     {{#if block.data.details.domains}}
-        <span class="name2"> Organization Name: </span>
-        {{block.data.details.domains}}
+        <span class="arinfolabel"> Organization Name: </span>
+        {{block.data.details.orgName}}
     {{/if}}
     </div>
 
-    <div class="regExpires">
-    {{#if block.data.details.expires}}
-        <span class="name3"> Expiration Date: </span>
-        {{moment-time block.data.details.expires}}
-    {{/if}}
-    </div>
-
-    <div class="regcreated">
-    {{#if block.data.details.created}}
-        <span class="name4"> Created Date: </span>
-        {{moment-time block.data.details.created}}
-    {{/if}}
+    <div class ="arinfo">
+        <a href="{{block.data.details.orgRef}}">View Additional Organization Information</a><i class="btb bt-external-link"></i>
     </div>
 
 
-    <div class="regupdated">
-    {{#if block.data.details.updated}}
-        <span class="name5"> Updated Date: </span>
-        {{moment-time block.data.details.updated}}
-    {{/if}}
-    </div>
-
-    <div class="registrar">
-    {{#if block.data.details.registrar}}
-        <span class="name6"> Registrar: </span>
-        {{block.data.details.registrar}}
-    {{/if}}
-    </div>
-
-
-    <div class="statuses">
-    {{#if block.data.details.status}}
-        <p>
-            <span class="status">  Status: </span>
-        </p>
-        <ul>
-            {{#each block.data.details.status as |item|}}
-            <li>{{item}}</li>
-            {{/each}}
-        </ul>
-    {{/if}}
-    </div>
-
-    <div class ="reverseipsection">
-        <a href="{{block.data.details.reverse_ip_url}}">View Additional Registration Information</a><i class="btb bt-external-link"></i>
-    </div>
-
-
-<div class="website">
-<i class="fa fa-info"></i> <span class="websiteInfo"> Website Information</span>
+<div class="arinfosect">
+<i class="fa fa-info"></i> <span>Network Block</span>
 </div>
 
-    <div class="title">
-    {{#if block.data.details.title}}
-        {{block.data.details.title}}
-    <span class="titles">: </span>
-        {{block.data.details.meta}}
+    <div class="arinfo">
+    {{#if block.data.details.netBlockHandle}}
+		<span class="arinfolabel"> Net Block Handle: </span>
+        {{block.data.details.netBlockHandle}}
     {{/if}}
     </div>
 
-    <div class="seo">
-    {{#if block.data.details.seoScore}}
-        <span class="seo1"> SEO Score: </span>
-        {{block.data.details.seoScore}}
+    <div class="arinfo">
+    {{#if block.data.details.netBlockName}}
+        <span class="arinfolabel"> Net Block Name: </span>
+        {{block.data.details.netBlockName}}
     {{/if}}
     </div>
 
-    <div class="server">
-    {{#if block.data.details.server}}
-        <span class="server_type"> Server Type: </span>
-        {{block.data.details.title}}
+    <div class="arinfo">
+    {{#if block.data.details.netBlockCIDR}}
+        <span class="arinfolabel"> Net Block CIDR: </span>
+        {{block.data.details.netBlockCIDR}}
     {{/if}}
     </div>
 
-    <div class="response">
-    {{#if block.data.details.response}}
-        <span class="responsetype"> Response Type: </span>
-        {{block.data.details.response}}
+    <div class="arinfo">
+    {{#if block.data.details.startAddr}}
+        <span class="arinfolabel"> Start Address: </span>
+        {{block.data.details.startAddr}}
+    {{/if}}
+    </div>
+	
+    <div class="arinfo">
+    {{#if block.data.details.endAddr}}
+        <span class="arinfolabel"> End Address: </span>
+        {{block.data.details.endAddr}}
     {{/if}}
     </div>
 
-    <div class ="websiteWhoIssection">
-        <a href="{{block.data.details.website_whois}}">View Additional Website Information </a><i class="btb bt-external-link"></i>
-    </div>
-
-
-    <div class="nameserverss">
-    {{#if block.data.details.nameservers}}
-
-        <p>
-            <i class="fa fa-server"></i><span class="Adatas"> Name Servers</span>
-        </p>
-        <ul>
-            {{#each block.data.details.nameservers as |item|}}
-            <li>{{item}}</li>
-            {{/each}}
-        </ul>
+    <div class="arinfo">
+    {{#if block.data.details.regDate}}
+        <span class="arinfolabel"> Registration Date: </span>
+        {{block.data.details.regDate}}
     {{/if}}
     </div>
 
-<div class="whois">
-<i class="fa fa-user"></i><span class="whoisInfo"> WhoIs Information</span>
+	<div class="arinfo">
+    {{#if block.data.details.upDate}}
+        <span class="arinfolabel"> Last Update Date: </span>
+        {{block.data.details.upDate}}
+    {{/if}}
+    </div>
+
+    <div class ="arinlink">
+        <a href="{{block.data.details.netBlockRef}}">View Additional Network Information</a><i class="btb bt-external-link"></i>
+    </div>
+
+<div class="arinfosect">
+<i class="fa fa-globe"></i> <span>Parent Network Details</span>
 </div>
 
-    <div class="earliest">
-    {{#if block.data.details.earliest}}
-        <span class="early"> Earliest Event: </span>
-        {{moment-time block.data.details.earliest}}
+    <div class="arinfo">
+    {{#if block.data.details.parentHandle}}
+        <span class="arinfolabel"> Parent Net Handle: </span>
+        {{block.data.details.parentHandle}}
     {{/if}}
     </div>
 
-    <div class="records">
-    {{#if block.data.details.records}}
-        <span class="records"> Number of WhoIs Records: </span>
-        {{block.data.details.records}}
+    <div class="arinfo">
+    {{#if block.data.details.parentName}}
+        <span class="arinfolabel"> Parent Net Name: </span>
+        {{block.data.details.parentName}}
     {{/if}}
     </div>
 
     <div class ="reversewhoissection">
-        <a href="{{block.data.details.reverse_whois_url}}">View Additional WhoIs Information </a><i class="btb bt-external-link"></i>
-    </div>
-
-
-<div class="history">
-<i class="fa fa-globe"></i><span class="histories"> Domain History </span>
-</div>
-
-    <div class="earliestEvent">
-    {{#if block.data.details.earliest}}
-        <span class="Earliest"> Earliest Event: </span>
-        {{moment-time block.data.details.earliest}}
-    {{/if}}
-    </div>
-
-    <div class="historicalevents">
-    {{#if block.data.details.historicalEvents}}
-        <span class="events"> Number of Historical Events: </span>
-        {{block.data.details.historicalEvents}}
-    {{/if}}
-    </div>
-
-    <div class="nameEvents">
-    {{#if block.data.details.nameEvents}}
-        <span class="nevents"> Number of Name_Server Events: </span>
-        {{block.data.details.nameEvents}}
-    {{/if}}
-    </div>
-
-    <div class="nameSpan">
-    {{#if block.data.details.nameSpan}}
-        <span class="nspan"> Name_Server Timespan: </span>
-        {{block.data.details.nameSpan}}
-    {{/if}}
-    </div>
-
-    <div class="ipEvents">
-    {{#if block.data.details.ipEvents}}
-        <span class="ievents"> Number of IP Events: </span>
-        {{block.data.details.ipEvents}}
-    {{/if}}
-    </div>
-
-    <div class="IPSpan">
-    {{#if block.data.details.ipSpan}}
-        <span class="ispan"> IP Timespan: </span>
-        {{block.data.details.ipSpan}}
-    {{/if}}
-    </div>
-
-    <div class ="historyurlsection">
-        <a href="{{block.data.details.history_url}}">View Additional Historical Information </a><i class="btb bt-external-link"></i>
+        <a href="{{block.data.details.reverse_whois_url}}">View Additional Parent Network Details/a><i class="btb bt-external-link"></i>
     </div>
