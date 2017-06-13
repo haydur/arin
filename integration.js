@@ -88,19 +88,19 @@ function _lookupEntity(entityObj, options, cb) {
                 return;
             }
 
-            if (response.statusCode === 206) {
-                cb(_createJsonErrorPayload("Unable to parse request", null, '206', '2A', 'Parse Error', {
-                    err: err
-                }));
-                return;
-            }
-
             if (response.statusCode !== 200) {
                 cb(body);
                 return;
             }
 
-
+			if(response) {
+				try {
+					a = JSON.parse(body);
+				} catch(e) {
+					log.trace({error: e}, "Printing out the results of Body ");; // ARIN response not JSON
+				}
+			}
+			
             log.trace({body: body}, "Printing out the results of Body ");
 
             // The lookup results returned is an array of lookup objects with the following format
